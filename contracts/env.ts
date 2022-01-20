@@ -24,7 +24,7 @@ declare module '@ioc:Adonis/Core/Env' {
 }
 
 export default Env.rules({
-    DB_CONNECTION: Env.schema.string(),
+    // DB_CONNECTION: Env.schema.string(),
     MYSQL_HOST: Env.schema.string({ format: 'host' }),
     MYSQL_PORT: Env.schema.number(),
     MYSQL_USER: Env.schema.string(),

@@ -19,4 +19,10 @@ export default class User extends BaseModel {
 
   @column()
   public password: string
+
+  @column()
+  public address: string
+
+  @column({  })
+  public isAdmin: boolean
 }

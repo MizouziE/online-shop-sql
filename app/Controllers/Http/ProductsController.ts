@@ -6,4 +6,9 @@ export default class ProductsController {
     const product = await Product.findBy('id', params.id);
     return view.render('products/details', { product });
   }
+
+  public async index({ view }) {
+    const products = await Product.all();
+    return view.render('products/index', { products })
+  }
 }

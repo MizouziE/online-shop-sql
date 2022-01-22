@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product Details</title>
+  <title>Products</title>
   @entryPointStyles('app')
   @entryPointScripts('app')
 </head>
@@ -11,10 +11,15 @@
     <main>
 
       <div class="article">
-        <h1> {{ product.name }} </h1>
-        <h2> {{ product.description }} </h2>
-        <p> € {{ product.price }} </p>
-        <p> {{ product.summary }} </p>
+        <h1> Products </h1>
+        <ul>
+          @each(product in products)
+            <li>
+              <p> {{ product.name }} </p>
+              <p> € {{ product.price }} </p>
+            </li>
+          @endeach
+        </ul>
       </div>
     </main>
   </body>

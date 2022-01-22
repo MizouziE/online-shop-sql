@@ -25,6 +25,7 @@ Route.get('/', async ({ view }) => {
 });
 
 Route.get('products/:id', 'ProductsController.show');
+Route.get('products', 'ProductsController.index');
 Route.get('users/:id', 'UsersController.show');
 Route.post('users/signup', 'UsersController.store');
 Route.get('orders/:id', 'OrdersController.show');

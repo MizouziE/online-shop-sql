@@ -23,6 +23,6 @@ export default class User extends BaseModel {
   @column()
   public address: string
 
-  @column({  })
+  @column()
   public isAdmin: boolean
 }

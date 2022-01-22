@@ -11,4 +11,8 @@ export default class AuthController {
 
     response.redirect().toRoute('dashboard')
   }
+
+  public async index({ view }) {
+    return view.render('login/index')
+  }
 }

@@ -3,8 +3,7 @@ import Product from 'App/Models/Product';
 
 export default class ProductsController {
   public async show({ params, view }) {
-    const product = await Product.find({ id : params.id });
-    console.log(product)
+    const product = await Product.findBy('id', params.id);
     return view.render('products/index', { product });
   }
 }

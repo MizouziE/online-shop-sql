@@ -28,6 +28,13 @@ a {
   text-decoration: none;
 }
 
+.heading {
+  display: block;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+
 main {
   max-width: 620px;
   margin: auto;
@@ -50,8 +57,27 @@ main {
   margin-bottom: 40px;
 }
 
+form a {
+  display: block;
+  font: inherit;
+  padding-top: 0.25rem;
+}
+
+span {
+  display: block;
+  padding-top: 0.25rem;
+}
+
 p {
   margin-bottom: 20px;
+}
+
+input, textarea {
+  font: inherit;
+  padding: inherit;
+  border-radius: 0.25rem;
+  border: none;
+  width: 90%;
 }
 
 main ul {

@@ -1,21 +1,24 @@
 @include('includes/head')
 </head>
 <body>
-  <main id="signup">
-    <h1>Login</h1>
-    <form action="/login" method="POST">
-      <div class="form-control">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
+  <main id="login">
+  <div>
+    <div>
+      <h1 class="heading">Login</h1>
+        <form action="/login" method="POST">
+          <div class="form-control">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-control">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+          <button class="btn">Log in</button>
+          <span>-OR-</span>
+        <a class="btn-alt" href="/users/signup">Create a new user</a>
+        </form>
       </div>
-      <div class="form-control">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
-      </div>
-      <button class="btn">Log in</button>
-    </form>
-    <div id="auth-alternative">
-      <a class="btn btn-alt" href="/users/signup">Create a new user</a>
     </div>
   </main>
 @includes('includes/footer')

@@ -30,6 +30,9 @@ export default class SignupUserValidator {
     email: schema.string({}, [
       rules.email(),
       rules.unique({ table: 'users', column: 'email' }),
+    ]),
+    confirm_email: schema.string({}, [
+
     ])
   });
 

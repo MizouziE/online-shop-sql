@@ -9,7 +9,7 @@ export default class UsersController {
     return view.render('users/index', { user });
   }
 
-  public async store({ request, response }) {
+  public async signup({ request, response }) {
     const user = await request.validate(SignupUser)
     console.log(user.name)
     console.log(user.email)

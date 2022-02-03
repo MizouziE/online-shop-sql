@@ -9,7 +9,7 @@ export default class AuthController {
       .use('web') // 👈 using sessions guard
       .attempt(email, password)
 
-    response.redirect().toRoute('dashboard')
+    response.redirect().toRoute('users/:id')
   }
 
   public async index({ view }) {

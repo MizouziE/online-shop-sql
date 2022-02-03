@@ -1,4 +1,11 @@
-  <div class="article">
-    <h1> {{ user.name }} </h1>
-    <p> {{ user.email }} </p>
-  </div>
+@include('includes/head')
+</head>
+  <body>
+    <main>
+
+      <div class="article">
+        <h1> {{ user.name }} </h1>
+        <p> {{ user.email }} </p>
+      </div>
+    </main>
+@includes('includes/footer')

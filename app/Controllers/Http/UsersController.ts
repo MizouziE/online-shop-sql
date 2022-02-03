@@ -5,7 +5,7 @@ import SignupUser from "App/Validators/SignupUserValidator";
 
 export default class UsersController {
   public async show({ params, view }) {
-    const user = await User.find({ id: params.id });
+    const user = await User.findBy('id', params.id);
     return view.render('users/index', { user });
   }
 

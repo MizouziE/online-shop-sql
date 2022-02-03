@@ -1,0 +1,30 @@
+@include('includes/head')
+</head>
+  <body>
+    <main>
+      <div>
+        <h1 class="heading">Sign up</h1>
+          <form action="/signup" method="POST">
+            <div class="form-control">
+              <label for="name">Name</label>
+              <input type="name" id="name" name="name" required>
+            </div>
+            <div class="form-control">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-control">
+              <label for="confirm-email">Confirm Email</label>
+              <input type="email" id="confirm-email" name="confirm-email" required>
+            </div>
+            <div class="form-control">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" required>
+            </div>
+            <button class="btn">Create user</button>
+            <a class="btn btn-alt" href="/login">Login instead</a>
+          </form>`
+      </div>
+
+    </main>
+@includes('includes/footer')

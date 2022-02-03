@@ -1,8 +1,6 @@
 // import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Hash from '@ioc:Adonis/Core/Hash'
 
-
-
 export default class AuthController {
   public async login({ request, auth, response }) {
     const email = request.input('email')
@@ -17,5 +15,9 @@ export default class AuthController {
 
   public async index({ view }) {
     return view.render('login/index')
+  }
+
+  public async signup({ view }) {
+    return view.render('users/signup')
   }
 }

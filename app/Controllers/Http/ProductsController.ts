@@ -16,6 +16,12 @@ export default class ProductsController {
     return view.render('products/create')
   }
 
+  public async inputEdit({ params, view }) {
+    const product = await Product.findBy('id', params.id)
+
+    return view.render('products/edit', { product })
+  }
+
   public async create({ request, response }) {
     const newProduct = request.only(['name', 'price', 'description', 'summary'])
     const product = new Product()
@@ -24,6 +30,21 @@ export default class ProductsController {
     product.price = newProduct.price
     product.description = newProduct.description
     product.summary = newProduct.summary
+
+    await product.save()
+    console.log(product.$isPersisted)
+    response.redirect('/products')
+  }
+
+  public async edit({ request, response }) {
+    const editedProduct = request.only(['name', 'price', 'description', 'summary'])
+    const id = request.only(['id'])
+    const product = await Product.findOrFail(id.id)
+
+    product.name = editedProduct.name
+    product.price = editedProduct.price
+    product.description = editedProduct.description
+    product.summary = editedProduct.summary
 
     await product.save()
     console.log(product.$isPersisted)

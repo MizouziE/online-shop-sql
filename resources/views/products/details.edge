@@ -9,6 +9,8 @@
         <p> € {{ product.price }} </p>
         <p> {{ product.summary }} </p>
         <a href="/products">Back to Product List</a>
+        <br>
+        <a class="btn" href="/edit/product/{{ product.id }}">Edit</a>
       </div>
     </main>
 @includes('includes/footer')

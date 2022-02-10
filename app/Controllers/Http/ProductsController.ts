@@ -1,4 +1,5 @@
 import Product from 'App/Models/Product';
+import Application from '@ioc:Adonis/Core/Application'
 // import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 export default class ProductsController {
@@ -26,13 +27,20 @@ export default class ProductsController {
     const newProduct = request.only(['name', 'price', 'description', 'summary'])
     const product = new Product()
 
-    product.name = newProduct.name
-    product.price = newProduct.price
-    product.description = newProduct.description
-    product.summary = newProduct.summary
+    const image = request.file('image')
+
+    if (image) {
+      await image.move(Application.tmpPath('uploads/products'))
+    }
+
+        product.name = newProduct.name
+        product.price = newProduct.price
+        product.description = newProduct.description
+        product.summary = newProduct.summary
+        product.imagePath = image.filePath
 
     await product.save()
-    console.log(product.$isPersisted)
+    // console.log(image)
     response.redirect('/products')
   }
 

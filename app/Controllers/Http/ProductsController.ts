@@ -1,13 +1,11 @@
 import Product from 'App/Models/Product';
 import Application from '@ioc:Adonis/Core/Application'
-import Drive from '@ioc:Adonis/Core/Drive'
 // import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 export default class ProductsController {
   public async show({ params, view }) {
     const product = await Product.findByOrFail('id', params.id)
-    const image = await Drive.getUrl(product.imagePath)
-    return view.render('products/details', { product, image })
+    return view.render('products/details', { product })
   }
 
   public async index({ view }) {

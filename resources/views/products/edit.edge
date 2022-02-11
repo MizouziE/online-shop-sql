@@ -23,6 +23,13 @@
           <label for="summary">Summary</label>
           <textarea rows="4" type="text" id="summary" name="summary" required>{{ product.summary }}</textarea>
         </div>
+        <div class="form-control">
+          <div>
+            <img src="/uploads/{{ product.imagePath }}" alt="No saved image" height="180">
+          </div>
+          <label for="image">Change/Add image?</label>
+          <input type="file" id="image" name="image">
+        </div>
         <button class="btn">Save </button>
       </form>
 

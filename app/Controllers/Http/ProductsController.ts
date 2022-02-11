@@ -1,5 +1,6 @@
 import Product from 'App/Models/Product';
 import Application from '@ioc:Adonis/Core/Application'
+import { DateTime } from 'luxon';
 // import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 export default class ProductsController {
@@ -49,10 +50,18 @@ export default class ProductsController {
     const id = request.only(['id'])
     const product = await Product.findOrFail(id.id)
 
+    const image = request.file('image')
+
+    if (image) {
+      await image.move(Application.tmpPath('uploads/products'))
+      product.imagePath = image.filePath
+    }
+
     product.name = editedProduct.name
     product.price = editedProduct.price
     product.description = editedProduct.description
     product.summary = editedProduct.summary
+    product.updatedAt = DateTime.now()
 
     await product.save()
     console.log(product.$isPersisted)

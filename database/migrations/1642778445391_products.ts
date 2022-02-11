@@ -9,7 +9,8 @@ export default class Products extends BaseSchema {
       table.string('name', 25).notNullable()
       table.integer('price').notNullable()
       table.string('description', 225).nullable()
-      table.text('summary').nullable
+      table.text('summary').nullable()
+      table.text('image_path').nullable()
 
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL

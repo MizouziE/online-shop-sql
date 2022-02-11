@@ -8,7 +8,12 @@
         <h2> {{ product.description }} </h2>
         <p> € {{ product.price }} </p>
         <p> {{ product.summary }} </p>
-        <a href="/products">Back to Product List</a>
+        <img src="/uploads/{{ product.imagePath }}" alt="Product has no image" height="180" title="Picture">
+        <div>
+          <a href="/products">Back to Product List</a>
+          <br>
+          <a class="btn" href="/edit/product/{{ product.id }}">Edit</a>
+        </div>
       </div>
     </main>
 @includes('includes/footer')

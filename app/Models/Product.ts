@@ -22,4 +22,7 @@ export default class Product extends BaseModel {
 
   @column()
   public summary: string
+
+  @column()
+  public imagePath: string
 }

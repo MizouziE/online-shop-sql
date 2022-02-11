@@ -34,6 +34,7 @@ Route.get('users/:id', 'UsersController.show')
 Route.post('users/signup', 'UsersController.store')
 Route.get('orders/:id', 'OrdersController.show')
 Route.get('carts/:id', 'CartsController.show')
+Route.post('carts', 'CartsController.add')
 
 Route.get('login', 'AuthController.index')
 Route.post('login', 'AuthController.login')

@@ -1,4 +1,14 @@
-  <div class="article">
-    <h1> {{ cart.items }} </h1>
-    <p> {{ cart.totalPrice }} </p>
-  </div>
+@include('includes/head')
+</head>
+
+<body>
+  <main>
+
+    <div class="article">
+      <h1> Items: {{ cart.items }} </h1>
+      <p> Cart Total: € {{ cart.totalPrice }} </p>
+      <p> Number of Items: {{ cart.numberOfItems }} </p>
+    </div>
+
+  </main>
+  @includes('includes/footer')

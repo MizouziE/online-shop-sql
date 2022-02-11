@@ -12,7 +12,7 @@ export default class Cart extends BaseModel {
   public updatedAt: DateTime
 
   @column()
-  public items: Array<string>
+  public items: JSON
 
   @column()
   public totalPrice: number

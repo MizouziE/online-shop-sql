@@ -1,6 +1,5 @@
 import Product from 'App/Models/Product';
 import Application from '@ioc:Adonis/Core/Application'
-import { DateTime } from 'luxon';
 // import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 export default class ProductsController {
@@ -41,7 +40,6 @@ export default class ProductsController {
         product.imagePath = image.filePath
 
     await product.save()
-    // console.log(image)
     response.redirect('/products')
   }
 
@@ -61,10 +59,8 @@ export default class ProductsController {
     product.price = editedProduct.price
     product.description = editedProduct.description
     product.summary = editedProduct.summary
-    product.updatedAt = DateTime.now()
 
     await product.save()
-    console.log(product.$isPersisted)
     response.redirect('/products')
   }
 }

@@ -1,5 +1,6 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, column, HasMany, hasMany } from '@ioc:Adonis/Lucid/Orm'
+import Product from "app/Models/Product"
 
 export default class Cart extends BaseModel {
   @column({ isPrimary: true })
@@ -11,8 +12,8 @@ export default class Cart extends BaseModel {
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   public updatedAt: DateTime
 
-  @column()
-  public items: JSON
+  @hasMany(() => Product)
+  public items: HasMany<typeof Product>
 
   @column()
   public totalPrice: number

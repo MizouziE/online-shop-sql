@@ -7,7 +7,7 @@ export default class Products extends BaseSchema {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id').primary()
       table.string('name', 25).notNullable()
-      table.integer('price').notNullable()
+      table.float('price', 8, 2).notNullable()
       table.string('description', 225).nullable()
       table.text('summary').nullable()
       table.text('image_path').nullable()

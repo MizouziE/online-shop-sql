@@ -6,9 +6,10 @@ export default class Carts extends BaseSchema {
   public async up () {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id').primary()
-      table.json('items').nullable()
-      table.integer('total_price').defaultTo('0')
-      table.integer('number_of_items').defaultTo('0')
+      // table.foreign('user_id').references('users.id')
+      table.string('items').defaultTo([])
+      table.float('total_price', 8, 2).defaultTo(0.00)
+      table.integer('number_of_items').defaultTo(0)
 
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
